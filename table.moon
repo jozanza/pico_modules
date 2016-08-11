@@ -1,8 +1,4 @@
------------------
--- table
------------------
-
-return {
+{
   copy: (xs) ->
     {k,v for k,v in pairs xs}
   keys: (xs) ->
@@ -22,7 +18,7 @@ return {
     _x = (type(x) == 'table') and (table.copy x) or x
     for k, v in pairs xs
       _x = f _x, v, k, xs
-    return _x
+    _x
   pretty: (x) ->
     stringify = (x, _) ->
       tx = type x
@@ -38,6 +34,6 @@ return {
         v = stringify v, __
         s = s..'\n'..__..'['..k..']= '..v
       s..'\n'.._..'} '
-    return stringify x, ''
+    stringify x, ''
 }
 
