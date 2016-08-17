@@ -1,4 +1,4 @@
-{
+return {
   copy: (xs) ->
     {k,v for k,v in pairs xs}
   keys: (xs) ->
