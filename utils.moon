@@ -4,7 +4,7 @@ stringify = (x, _ = '') ->
   if 'number' == tx
     return x
   if 'string' == tx
-    return "'#{x}'"
+    return '\''..x..'\''
   if 'nil' == tx
     return 'nil'
   if 'function' == tx
@@ -14,7 +14,7 @@ stringify = (x, _ = '') ->
   s = '{'
   __ = _..'  '
   for k,v in pairs x
-    k = stringify k, ''
+    k = stringify k
     v = stringify v, __
     s = s..'\n'..__..'['..k..']= '..v
   s = s..'\n'.._..'} '
@@ -24,6 +24,7 @@ stringify = (x, _ = '') ->
 -- :: func -> * -> *
 memo = (f) ->
   cache = {}
+  setmetatable cache, { __mode: 'kv' }
   (...) ->
     k = stringify {...}
     if cache[k]
