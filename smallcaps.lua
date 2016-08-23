@@ -1,6 +1,5 @@
 -- http://www.lexaloffle.com/bbs/?tid=3217
-
-return function smallcaps(s)
+return function(s)
   local d=""
   local c
   for i=1,#s do
