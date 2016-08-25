@@ -1,4 +1,4 @@
-(x, _ = '') ->
+stringify = (x, _ = '') ->
   tx = type x
   if 'number' == tx
     return x
@@ -18,3 +18,5 @@
     s = s..'\n'..__..'['..k..']= '..v
   s = s..'\n'.._..'} '
   return s
+
+return stringify
