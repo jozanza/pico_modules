@@ -4,7 +4,7 @@
   c.__call = (...) =>
     _ = {}
     setmetatable _, c
-    if @constructor then @constructor _, ...
+    if @constructor then @.constructor _, ...
     return _
   setmetatable c, c
   return c
