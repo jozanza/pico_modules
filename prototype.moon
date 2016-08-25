@@ -7,3 +7,4 @@
     if @constructor then @constructor ...
     return _
   setmetatable c, c
+  return c
