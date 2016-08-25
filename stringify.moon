@@ -1,4 +1,4 @@
-stringify = (x, _ = '') ->
+(x, _ = '') ->
   tx = type x
   if 'number' == tx
     return x
