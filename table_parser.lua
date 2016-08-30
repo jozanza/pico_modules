@@ -57,8 +57,8 @@ function ob(str,props)
 end
 
 return {
- extend=extend
- each_char=each_char
- lut=lut
- ob=ob
+ extend=extend;
+ each_char=each_char;
+ lut=lut;
+ ob=ob;
 }
