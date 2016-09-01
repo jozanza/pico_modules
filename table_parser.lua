@@ -1,6 +1,6 @@
 -- from krajzeg's 'the lair' http://www.lexaloffle.com/bbs/?tid=4051
 
-function extend(obj,props)
+local extend=function(obj,props)
  obj=obj or {}
  for k,v in pairs(props or {}) do
   obj[k]=v
@@ -10,7 +10,7 @@ end
 
 --works as a foreach loop
 --for characters in string
-function each_char(str,fn)
+local each_char=function(str,fn)
  for i=1,#str do
   fn(sub(str,i,i),i)
  end
@@ -20,7 +20,7 @@ end
 --tables using one token, via
 --string parsing and multiline
 --strings
-function lut(str)
+local lut=function(str)
  local result,s={},1
  each_char(str,function(c,i)
   if c=="\n" then
@@ -35,7 +35,7 @@ end
 --objects with a single
 --token by using multiline
 --strings
-function ob(str,props)
+local ob=function(str,props)
  local result,s,n={},1,1
  each_char(str,function(c,i)
   local sc,nxt=sub(str,s,s),i+1
